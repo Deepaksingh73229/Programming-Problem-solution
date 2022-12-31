@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main(){
+
+    cout<<"Problem 1: Find the unique number in a given array where all the elements are repeated twice with one value being unique?\n";
+
+    int n,result;
+
+    cout<<"Enter length of array\n";
+    cin>>n;
+
+    int item[n];
+
+    cout<<"Enter elements of array\n";
+
+    for(int i=0; i<n; i++){
+        cin>>item[i];
+    }
+
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
+            if(item[i]==item[j]){
+                item[j]=item[i]=-1;
+            }
+        }
+    }
+
+    for(int i=0; i<n; i++){
+        if(item[i]>0){
+            result=item[i];
+        }
+    }
+
+    cout<<"The unique no is : "<<result<<"\n";
+
+    return 0;
+}
